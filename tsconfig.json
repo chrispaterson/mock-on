@@ -9,7 +9,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "preserveConstEnums": true,
-    "target": "ES6"
+    "target": "ESNext"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.test.ts"]
