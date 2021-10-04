@@ -1,3 +1,7 @@
+/**
+ * thie function generates a random integer value between a min and max value.
+ * The defaul min is 0 and the default max is 100.
+ */
 type Props = {
   min?:number;
   max?:number;

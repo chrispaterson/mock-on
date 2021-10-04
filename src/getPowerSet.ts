@@ -1,13 +1,16 @@
-type Props = {
-  numItems: number;
-}
-
-export function getPowerSet({numItems}: Props): boolean[][] {
+/**
+ * This function creates all possible combination of boolean values.
+ *
+ * @param numItems[number] - number of boolean items.
+ * @return boolean[][] -
+ * two dimensional array of boolean values.  The row is numItems long.
+ */
+export function getPowerSet(numItems: number): boolean[][] {
 
   const total = 1 << numItems;
   const powSet: boolean[][] = [];
 
-  for (let i =0; i < total; i++) {
+  for (let i = 0; i < total; i++) {
 
     const group: boolean[] = [];
 

@@ -1,5 +1,4 @@
 export * from './getPowerSet';
-export * from './index';
 export * from './isPrimitive';
 export * from './maybeUndefined';
 export * from './mockBoolean';

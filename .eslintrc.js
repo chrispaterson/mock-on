@@ -25,6 +25,7 @@ module.exports = {
         'CallExpression': {'arguments': 'first'},
       },
     ],
+    'valid-jsdoc': 0,
     'max-len': 0,
     'new-cap': 'off',
     'no-console': ERROR,

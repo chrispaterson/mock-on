@@ -4,3 +4,5 @@ rm -rf lib
 mkdir lib
 
 tsc
+
+rm -r lib/*.test.*
