@@ -2,7 +2,13 @@
 
 rm -rf lib
 mkdir lib
+mkdir lib/esm
+mkdir lib/cjs
+mkdir lib/types
 
-tsc
-
-rm -r lib/*.test.*
+rollup -c rollup-config.js
+tsc \
+  --emitDeclarationOnly \
+  --declarationDir lib/types \
+  --declarationMap \
+  --mapRoot src

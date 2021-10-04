@@ -1,15 +1,12 @@
 {
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "lib",
     "declaration": true,
     "downlevelIteration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "commonjs",
     "moduleResolution": "node",
-    "preserveConstEnums": true,
-    "target": "ESNext"
+    "preserveConstEnums": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.test.ts"]
