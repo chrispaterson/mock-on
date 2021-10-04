@@ -5,7 +5,7 @@
  * @return boolean[][] -
  * two dimensional array of boolean values.  The row is numItems long.
  */
-export function getPowerSet(numItems: number): boolean[][] {
+export const getPowerSet = (numItems: number): boolean[][] => {
 
   const total = 1 << numItems;
   const powSet: boolean[][] = [];
@@ -26,4 +26,4 @@ export function getPowerSet(numItems: number): boolean[][] {
 
   return powSet;
 
-}
+};
