@@ -1,6 +1,6 @@
 {
   "name": "mock-on",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Suite of simple testing utilties",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
