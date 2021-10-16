@@ -1,6 +1,6 @@
 {
   "name": "mock-on",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Suite of simple testing utilties",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
