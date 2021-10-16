@@ -1,0 +1,16 @@
+#!/bin/bash
+
+wget https://publicsuffix.org/list/public_suffix_list.dat
+
+SUFFIX_TS=src/publicSuffixes.ts
+
+echo "export const publicSuffixes = [" > $SUFFIX_TS
+while IFS= read -r line; do
+  if ! [[ "$line" =~ ^//* ]]; then
+      if ! [[ -z "$line" ]]; then
+        echo "  \"$line\"," >> $SUFFIX_TS
+      fi
+  fi
+done < public_suffix_list.dat
+
+echo "];" >> $SUFFIX_TS

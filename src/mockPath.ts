@@ -8,20 +8,16 @@ type Props = {
   pathMinLength?: number;
 }
 
-export function mockPath({
+export const mockPath = ({
   maxLength = 10,
   minLength = 1,
   pathMaxLength = 30,
   pathMinLength = 1,
-}: Props = {}): string {
-
-  return mockSegmentedString({
-    maxLength,
-    minLength,
-    segmentMaxLength: pathMaxLength,
-    segmentMinLength: pathMinLength,
-    separator: '/',
-    charSet: urlSafeCharset,
-  });
-
-}
+}: Props = {}): string => mockSegmentedString({
+  maxLength,
+  minLength,
+  segmentMaxLength: pathMaxLength,
+  segmentMinLength: pathMinLength,
+  separator: '/',
+  charSet: urlSafeCharset,
+});

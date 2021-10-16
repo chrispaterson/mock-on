@@ -13,9 +13,9 @@
     "src"
   ],
   "scripts": {
-    "build": "./build",
+    "build": "./scripts/build",
     "debug": "node --inspect-brk node_modules/.bin/jest --watchAll --runInBand",
-    "deploy": "./deploy",
+    "deploy": "./scripts/deploy",
     "lint": "eslint `find src -name '*.ts'`",
     "test": "jest --watchAll"
   },

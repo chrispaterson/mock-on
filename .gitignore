@@ -1,6 +1,7 @@
 .DS_Store
 node_modules/
 lib/
+public_suffix_list.dat*
 
 # Editor directories and files
 .idea
@@ -11,3 +12,4 @@ lib/
 *.swp
 *.swo
 *.log
+
