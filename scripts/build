@@ -1,10 +1,24 @@
 #!/bin/bash
 
+./scripts/updatePublicSuffixes
+
 rm -rf lib
 mkdir lib
 mkdir lib/esm
 mkdir lib/cjs
 mkdir lib/types
+
+FILES=$(ls src)
+echo -n > 'src/index.ts'
+for FILE in $FILES; do 
+  if [[ $FILE != 'index.ts' && $FILE != *.test.ts ]]; then 
+    if [ -d $FILE ]; then
+      echo "export * from './$FILE';" >> 'src/index.ts'
+    elif [[ ${FILE##*.} == 'ts' ]]; then
+      echo "export * from './${FILE%.*}';" >> 'src/index.ts'
+    fi
+  fi
+done
 
 rollup -c rollup-config.js
 tsc \

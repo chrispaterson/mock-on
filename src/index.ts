@@ -9,4 +9,6 @@ export * from './mockPath';
 export * from './mockSegmentedString';
 export * from './mockString';
 export * from './mockStringArray';
+export * from './mockUrl';
+export * from './publicSuffixes';
 export * from './urlSafeCharset';
