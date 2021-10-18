@@ -5,6 +5,7 @@ export * from './mockBoolean';
 export * from './mockHexColor';
 export * from './mockInt';
 export * from './mockIntArray';
+export * from './mockItem';
 export * from './mockPath';
 export * from './mockSegmentedString';
 export * from './mockString';
