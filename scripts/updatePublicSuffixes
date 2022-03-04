@@ -16,3 +16,5 @@ done < public_suffix_list.dat
 echo "];" >> $SUFFIX_TS
 
 rm public_suffix_list.dat
+
+yarn lint --fix
