@@ -10,7 +10,7 @@ type Props = {
   pathMaxLength?: number;
   pathMinLength?: number;
   topLevelDomain?: string;
-}
+};
 
 export const mockUrl = ({
   https = true,
@@ -19,25 +19,30 @@ export const mockUrl = ({
   pathMaxLength = 30,
   pathMinLength = 1,
   topLevelDomain,
-}: Props = {}): string => `http${
-  https ? 's' : ''
-}://${
-  mockSegmentedString({
+}: Props = {}): string =>
+  `http${https ? 's' : ''}://${mockSegmentedString({
     separator: '.',
     maxLength: 2,
     charCodeStart: [97],
     charCodeEnd: [122],
-  })
-}${
-  topLevelDomain ?
-    topLevelDomain :
-    publicSuffixes[mockInt({
-      min: 0,
-      max: publicSuffixes.length - 1,
-    })]
-}/${mockPath({
-  maxLength,
-  minLength,
-  pathMaxLength,
-  pathMinLength,
-})}`;
+  })}${
+    topLevelDomain ?
+      topLevelDomain : /**
+         * Some domains have special encodings that need to be  URI encoded.
+         * Especially since when testing, methods like fetch will do that
+         * automatically.
+         */
+      encodeURIComponent(
+        publicSuffixes[
+          mockInt({
+            min: 0,
+            max: publicSuffixes.length - 1,
+          })
+        ],
+      )
+  }/${mockPath({
+    maxLength,
+    minLength,
+    pathMaxLength,
+    pathMinLength,
+  })}`;
