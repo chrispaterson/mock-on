@@ -10,6 +10,8 @@ export * from './mockPath';
 export * from './mockSegmentedString';
 export * from './mockString';
 export * from './mockStringArray';
+export * from './mockSubset';
 export * from './mockUrl';
 export * from './publicSuffixes';
+export * from './shuffle';
 export * from './urlSafeCharset';
