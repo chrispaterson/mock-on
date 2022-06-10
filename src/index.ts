@@ -1,6 +1,7 @@
 export * from './getPowerSet';
 export * from './isPrimitive';
 export * from './maybeUndefined';
+export * from './mockArrayOf';
 export * from './mockBoolean';
 export * from './mockHexColor';
 export * from './mockInt';

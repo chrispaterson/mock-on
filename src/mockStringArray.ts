@@ -9,7 +9,7 @@ type Props = {
   charCodeStart?: number | number[];
   charCodeEnd?: number | number[];
   charSet?: string[];
-}
+};
 
 export function mockStringArray({
   maxLength = 10,
@@ -27,15 +27,17 @@ export function mockStringArray({
     max: maxLength,
   });
 
-  for (let i=0; i < len; i++) {
+  for (let i = 0; i < len; i++) {
 
-    result.push(mockString({
-      charCodeStart,
-      charCodeEnd,
-      charSet,
-      maxLength: stringMaxLength,
-      minLength: stringMinLength,
-    }));
+    result.push(
+      mockString({
+        charCodeStart,
+        charCodeEnd,
+        charSet,
+        maxLength: stringMaxLength,
+        minLength: stringMinLength,
+      }),
+    );
 
   }
 
