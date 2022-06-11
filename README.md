@@ -136,16 +136,6 @@ const myString = mockString({ charCodeStart: [ 97 ], charCodeEnd: [ 122 ] });
 
 **Example**
 
-Generate a random string value of only lowercase letters.
-
-```TypeScript
-const myString = mockString({ charCodeStart: 97, charCodeEnd: 122 });
-// or
-const myString = mockString({ charCodeStart: [ 97 ], charCodeEnd: [ 122 ] });
-```
-
-**Example**
-
 Generate a random string value of lowercase letters and punctuation.
 
 ```TypeScript
