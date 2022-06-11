@@ -3,25 +3,34 @@ import {mockInt} from './mockInt';
 type Settings = {
   maxLength?: number;
   minLength?: number;
+  length?: number;
 };
 
 export function mockArrayOf<T = unknown>(
-  creatorFuntion: (index?: number) => T,
+  create: (index?: number) => T,
   {
-    maxLength, minLength,
+    maxLength = 100, minLength = 1, length,
   }: Settings = {},
 ): T[] {
 
   const result: T[] = [];
 
-  const len = mockInt({
-    min: minLength,
-    max: maxLength,
-  });
+  if (minLength > maxLength) {
+
+    maxLength += 1;
+
+  }
+
+  const len =
+    length ??
+    mockInt({
+      min: minLength,
+      max: maxLength,
+    });
 
   for (let i = 0; i < len; i++) {
 
-    result.push(creatorFuntion(i));
+    result.push(create(i));
 
   }
 
