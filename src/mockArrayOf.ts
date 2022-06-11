@@ -9,7 +9,7 @@ type Settings = {
 export function mockArrayOf<T = unknown>(
   create: (index?: number) => T,
   {
-    maxLength = 100, minLength = 1, length,
+    maxLength = 30, minLength = 1, length,
   }: Settings = {},
 ): T[] {
 
