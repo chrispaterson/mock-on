@@ -100,13 +100,21 @@ const myBoolean = mockBoolean();
 
 Generates a random string. By default this function will generate a string between ascii values 48-57 (numbers), 65-90 (A-Z), and 97-122 (a-z).
 
-| Property Name   | Type       | Required  | Default | Description                                                                                                                   |
-| :-------------- | :--------- | :-------: | :-----: | :---------------------------------------------------------------------------------------------------------------------------- |
-| `maxLength`     | `number`   |    No     |   30    | maximum string length                                                                                                         |
-| `minLength`     | `number`   |    No     |    1    | minimum string length                                                                                                         |
-| `charCodeStart` | `number    | number[]` |   No    | [48,65,97] Single charCode value or multiple starts to build ranges. **Must Correspond with `charCodeEnd`**                   |
-| `charCodeEnd`   | `number    | number[]` |   No    | [48,65,97] Single charCode value or multiple ends to build ranges. **Must Correspond with `charCodeStart`**                   |
-| `charSet`       | `string[]` |    No     |    -    | an array of characters to use. If this value is passed it will take prescedence over `charCodeStart` and `charCodeEnd` values |
+| Property Name         | Type     | Required  |      Default      | Description |
+| :-------------------- | :------- | :-------: | :---------------: | :---------- |
+| `maxLength`           | `number` |    No     |        30         |
+| maximum string length |
+| `minLength`           | `number` |    No     |         1         |
+| minimum string length |
+| `charCodeStart`       | `number  | number[]` | [48,65,97] Single |
+
+    charCode value or multiple starts to build ranges.  **Must Correspond
+    with `charCodeEnd`** |
+
+| `charCodeEnd` | `number | number[]` | [48,65,97] Single charCode value or
+multiple ends to build ranges. **Must Correspond with `charCodeStart`** |
+| `charSet` | `string[]` | No | - | an array of characters to use. If this value
+is passed it will take prescedence over `charCodeStart` and `charCodeEnd` values |
 
 **Example**
 
