@@ -147,7 +147,10 @@ const myString = mockString({ charCodeStart: [ 97 ], charCodeEnd: [ 122 ] });
 Generate a random string value of lowercase letters and punctuation.
 
 ```TypeScript
-const myString = mockString({ charCodeStart: [ 97, 33, 44, 46, 63 ], charCodeEnd: [ 122, 33, 44, 46, 63 ] });
+const myString = mockString({
+  charCodeStart: [97, 33, 44, 46, 63],
+  charCodeEnd: [122, 33, 44, 46, 63],
+});
 ```
 
 **Example**
@@ -172,7 +175,7 @@ Generates an Array of a single value that is created via the create argument.
 
 **Example**
 
-Generate a random string value of out of a set of characters.
+Generate an array of a given type between 3 and 5 items long.
 
 ```TypeScript
 interface MyObject {
@@ -180,7 +183,14 @@ interface MyObject {
   url: string;
 }
 
-const arrayOfMyObjects: MyObject[] = mockArrayOf((index: number): MyObject => ({ id: `id-${index}`, url: mockUrl() }), {maxLength: 5, minLength: 3});
+const arrayOfMyObjects: MyObject[] = mockArrayOf(
+  (index: number): MyObject => ({
+    id: `id-${index}`, url: mockUrl(),
+  }),
+  {
+    maxLength: 5, minLength: 3,
+  },
+);
 ```
 
 ### `mockHexColor`
