@@ -61,8 +61,8 @@ Generates a random integer.
 
 | Property Name | Type     | Required | Default | Description           |
 | :------------ | :------- | :------: | :-----: | :-------------------- |
-| `min`         | `number` |    No    |    0    | minimum integer value |
-| `max`         | `number` |    No    |   100   | maximum integer value |
+| `min`         | `number` |    No    |   `0`   | minimum integer value |
+| `max`         | `number` |    No    |  `100`  | maximum integer value |
 
 **Example**
 
@@ -102,9 +102,9 @@ Generates a random string. By default this function will generate a string betwe
 
 | Property Name         | Type     | Required  |      Default      | Description |
 | :-------------------- | :------- | :-------: | :---------------: | :---------- |
-| `maxLength`           | `number` |    No     |        30         |
+| `maxLength`           | `number` |    No     |       `30`        |
 | maximum string length |
-| `minLength`           | `number` |    No     |         1         |
+| `minLength`           | `number` |    No     |        `1`        |
 | minimum string length |
 | `charCodeStart`       | `number  | number[]` | [48,65,97] Single |
 
@@ -167,11 +167,12 @@ const myString = mockString({ charSet: ['a','b','c','d','-'] });
 
 Generates an Array of a single value that is created via the create argument.
 
-| Property Name | Type                       | Required | Default | Description                                     |
-| :------------ | :------------------------- | :------: | :-----: | :---------------------------------------------- |
-| `create`      | `(index?: number) => Type` |   Yes    |    -    | function that creates an instance for the array |
-| `maxLength`   | `number`                   |    No    |   30    | maximum array length                            |
-| `minLength`   | `number`                   |    No    |    1    | minimum array length                            |
+| Property Name | Type                       | Required | Default | Description                                                                           |
+| :------------ | :------------------------- | :------: | :-----: | :------------------------------------------------------------------------------------ |
+| `create`      | `(index?: number) => Type` |   Yes    |    -    | function that creates an instance for the array                                       |
+| `maxLength`   | `number`                   |    No    |  `30`   | maximum array length                                                                  |
+| `minLength`   | `number`                   |    No    |   `1`   | minimum array length                                                                  |
+| `length`      | `number`                   |    No    |    -    | specific array length. If specified this overrides the `minLength`/`maxLength` values |
 
 **Example**
 
@@ -195,7 +196,32 @@ const arrayOfMyObjects: MyObject[] = mockArrayOf(
 
 ### `mockHexColor`
 
+Generates a random six character hex color string
+
+| Property Name | Type | Required | Default | Description |
+| :------------ | :--- | :------: | :-----: | :---------- |
+| -             | -    |    -     |    -    | -           |
+
+**Example**
+
+Generate a random hex color.
+
+```TypeScript
+const myHexColor = mockHexColor();
+```
+
 ### `mockIntArray`
+
+Generates a random array of integers
+
+| Property Name | Type      | Required | Default | Description                                                                           |
+| :------------ | :-------- | :------: | :-----: | :------------------------------------------------------------------------------------ |
+| `min`         | `number`  |    No    |   `0`   | minimum integer value                                                                 |
+| `max`         | `number`  |    No    |  `100`  | maximum integer value                                                                 |
+| `maxLength`   | `number`  |    No    |  `30`   | maximum array length                                                                  |
+| `minLength`   | `number`  |    No    |    1    | minimum array length                                                                  |
+| `length`      | `number`  |    No    |    -    | specific array length. If specified this overrides the `minLength`/`maxLength` values |
+| `unique`      | `boolean` |    No    | `false` | `true` if all integers should be unique                                               |
 
 ### `mockItem`
 

@@ -1,6 +1,6 @@
 import {mockInt} from './mockInt';
 
-type Settings = {
+type Props = {
   maxLength?: number;
   minLength?: number;
   length?: number;
@@ -9,15 +9,15 @@ type Settings = {
 export function mockArrayOf<T = unknown>(
   create: (index?: number) => T,
   {
-    maxLength = 30, minLength = 1, length,
-  }: Settings = {},
+    minLength = 1, maxLength = 30, length,
+  }: Props = {},
 ): T[] {
 
   const result: T[] = [];
 
   if (minLength > maxLength) {
 
-    maxLength += 1;
+    maxLength = minLength + 1;
 
   }
 

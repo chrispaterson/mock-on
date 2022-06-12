@@ -1,70 +1,46 @@
+import {mockArrayOf} from './mockArrayOf';
 import {mockInt} from './mockInt';
+import {shuffle} from './shuffle';
 
 type Props = {
-  min?: number,
-  max?: number,
-  length?: number,
-  unique?: boolean,
-}
+  min?: number;
+  max?: number;
+  maxLength?: number;
+  minLength?: number;
+  length?: number;
+  unique?: boolean;
+};
 
 export function mockIntArray({
   min = 0,
   max = 100,
-  length = 30,
+  minLength = 1,
+  maxLength = 30,
+  length,
   unique = false,
 }: Props = {}): number[] {
 
-  if (max < min) {
+  if (min > max) {
 
-    throw new Error(`max value must be greater than min value: min ${min} max ${max}`);
+    max = min;
 
   }
 
-  let retr: number[] = [];
-
-  if ( unique ) {
-
-    if (max - min === length) {
-
-      for (let i = max - 1; i >= min; i--) {
-
-        retr[mockInt({
-          min: 0,
-          max: i,
-        })] = max + 1;
-
-      }
-
-    } else {
-
-      const intSet = new Set<number>();
-
-      while (intSet.size != length) {
-
-        intSet.add(mockInt({
+  const retr: number[] = mockArrayOf(
+    (index: number): number =>
+      unique ?
+        min + index :
+        mockInt({
           min,
           max,
-        }));
+        }),
+    {
+      maxLength,
+      minLength,
+      length,
+    },
+  );
 
-      }
-
-      retr = Array.from(intSet);
-
-    }
-
-  } else {
-
-    for (let i = 0; i < length; i++) {
-
-      retr.push(mockInt({
-        min,
-        max,
-      }));
-
-    }
-
-  }
-
-  return retr;
+  return unique ? shuffle(retr) : retr;
 
 }
