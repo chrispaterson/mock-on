@@ -242,22 +242,42 @@ const myIntArray = mockIntArray({length: 100});
 
 ### `mockItem`
 
+documentation coming soon...
+
 ### `mockPath`
+
+documentation coming soon...
 
 ### `mockSegmentedString`
 
+documentation coming soon...
+
 ### `mockStringArray`
+
+documentation coming soon...
 
 ### `mockSubset`
 
+documentation coming soon...
+
 ### `mockUrl`
+
+documentation coming soon...
 
 # Utilities
 
 ### `getPowerSet`
 
+documentation coming soon...
+
 ### `isPrimitive`
+
+documentation coming soon...
 
 ### `maybeUndefined`
 
+documentation coming soon...
+
 ### `shuffle`
+
+documentation coming soon...
