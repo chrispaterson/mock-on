@@ -219,9 +219,26 @@ Generates a random array of integers
 | `min`         | `number`  |    No    |   `0`   | minimum integer value                                                                 |
 | `max`         | `number`  |    No    |  `100`  | maximum integer value                                                                 |
 | `maxLength`   | `number`  |    No    |  `30`   | maximum array length                                                                  |
-| `minLength`   | `number`  |    No    |    1    | minimum array length                                                                  |
+| `minLength`   | `number`  |    No    |   `1`   | minimum array length                                                                  |
 | `length`      | `number`  |    No    |    -    | specific array length. If specified this overrides the `minLength`/`maxLength` values |
 | `unique`      | `boolean` |    No    | `false` | `true` if all integers should be unique                                               |
+
+**Example**
+
+Generate a random int array of values between 0 and 10.
+
+```TypeScript
+// 0 is min default so it is unnecessary to pass that here
+const myIntArray = mockIntArray({min: 0, max: 10});
+```
+
+**Example**
+
+Generate a random int array of length 100 values between 0 and 100 (default int values).
+
+```TypeScript
+const myIntArray = mockIntArray({length: 100});
+```
 
 ### `mockItem`
 
