@@ -198,9 +198,9 @@ const arrayOfMyObjects: MyObject[] = mockArrayOf(
 
 Generates a random six character hex color string
 
-| Property Name | Type | Required | Default | Description |
-| :------------ | :--- | :------: | :-----: | :---------- |
-| -             | -    |    -     |    -    | -           |
+| Property Name | Type   | Required | Default | Description                                      |
+| :------------ | :----- | :------: | :-----: | :----------------------------------------------- |
+| `leadingChar` | string |    No    |  `""`   | Prepends to beginning of the returned hex string |
 
 **Example**
 
